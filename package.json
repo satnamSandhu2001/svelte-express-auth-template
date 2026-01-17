@@ -1,0 +1,13 @@
+{
+	"name": "template",
+	"private": true,
+	"workspaces": [
+		"api",
+		"web"
+	],
+	"scripts": {
+		"dev:website": "pnpm --filter web dev",
+		"dev:api": "pnpm --filter api dev",
+		"start:api": "pnpm --filter api start"
+	}
+}
