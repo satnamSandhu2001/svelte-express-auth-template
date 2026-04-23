@@ -1,0 +1,17 @@
+import { z } from 'zod';
+
+const login_schema = z.object({
+  email: z
+    .email({ error: 'Please enter a valid email address' })
+    .toLowerCase()
+    .trim(),
+  password: z
+    .string()
+    .trim()
+    .min(4, { error: 'Password must be at least 4 characters' })
+    .max(16, { error: 'Password must be at most 16 characters' }),
+});
+
+export const auth_schema = {
+  login_schema,
+};
